@@ -6,8 +6,12 @@ class Home extends BaseController
 {
     public function home(): string
     {
-        $this->sendEmail();
-        return view('home');
+        if (auth()->loggedIn()) {
+            $data['name'] = auth()->user()->name;
+        }
+        
+        return view('home', $data);
+
     }
 
     public function sendEmail()

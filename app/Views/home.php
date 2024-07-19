@@ -7,7 +7,7 @@
         <?= $this->include("components/nav-bar") ?>
 
         <div class="container">
-            <h1>BENVENUTO NEL SITO</h1>
+            <h1>BENVENUTO <?= esc(auth()->user()->name) ?></h1>
         </div>
         
     <?= $this->endSection() ?>

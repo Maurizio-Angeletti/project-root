@@ -15,16 +15,41 @@
             
           </ul>
           
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0"">
-          <?php if (auth()->loggedIn()): ?>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= url_to("logout") ?>">Logout</a>
-            </li>
-          <?php else: ?>
-            <li class="nav-item">
-               <a class="nav-link" href="<?= url_to("login") ?>">Login</a>
-            </li>
-          <?php endif; ?>
+
+
+          <div class="dropdown navbar-nav me-5 ms-auto mb-2 mb-lg-0">
+            <?php if (auth()->loggedIn()): ?>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php esc(auth()->user()->name) ?>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="">
+                <a class="dropdown-item" href="<?= url_to("logout") ?>">Logout</a>
+              </li>
+            </ul>
+
+            <?php else: ?>
+              
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </button>
+              <ul class="dropdown-menu">
+                <li class="">
+                  <a class="dropdown-item" href="<?= url_to("login") ?>">Login</a>
+                </li>
+
+                <li class="">
+                  <a class="dropdown-item" href="<?= url_to("register") ?>">Registrati</a>
+                </li>
+              </ul>
+              
+
+            <?php endif; ?>
+              
+          
+          </div>
+              
             
           </ul>
         </div>
