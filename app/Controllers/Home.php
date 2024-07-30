@@ -4,13 +4,15 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function home(): string
+    public function home()
     {
-        if (auth()->loggedIn()) {
-            $data['name'] = auth()->user()->name;
+       
+        if (session("magicLogin")) {
+            return redirect()->to(url_to("set_password"))
+                            ->with("message","perfavore modifica la password");
         }
         
-        return view('home', $data);
+        return view('home');
 
     }
 

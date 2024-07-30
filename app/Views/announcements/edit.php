@@ -6,7 +6,7 @@
 
         <?= $this->include("components/nav-bar") ?>
 
-        <div class="container">
+        < class="container">
 
             <?php if (session()->has("errors")): ?>
                 <ul>
@@ -24,9 +24,11 @@
 
             <?= form_open("/announcement/update" . $announcement->id) ?>
 
-            <?= $this->include("components/announcements-form") ?>
-            
-            <button class="btn btn-primary" type="submit">Modifica</button>
+                <?= $this->include("components/announcements-form") ?>
+                
+                <button class="btn btn-primary" type="submit">Modifica</button>
+                
+            </form>
             
         </div>
     <?= $this->endSection() ?>

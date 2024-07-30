@@ -18,4 +18,11 @@ class User extends ShieldUserModel
             'name',
         ];
     }
+
+    public function getUsersWithAuthData()
+    {
+        return $this->select('users.*, auth_identities.*')
+                    ->join('auth_identities', 'auth_identities.user_id = users.id')
+                    ->findAll();
+    }
 }
