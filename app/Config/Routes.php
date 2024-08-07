@@ -8,6 +8,7 @@ use App\Controllers\Home;
  */
 $routes->get('/', [Home::class,'home'], ['as'=>'home']);// se usiamo questo metodo dobbiqmo riportare l' use della classe in qusto caso il namespace App\Controllers\Home più il nome della classe
 
+// $routes->get('/announcements/index','AnnouncementController::index',['as'=> 'index_announcements','filter' => 'login']); //aggiungendo 'filter' => 'login' indichiamo che questa vista è raggiungibile solo se il filtro login viene superato.
 $routes->get('/announcements/index','AnnouncementController::index',['as'=> 'index_announcements']);
 $routes->get('/announcement/new', 'AnnouncementController::new', ['as'=> 'new_announcement']);
 $routes->post('/announcement/create', 'AnnouncementController::create', ['as'=> 'create_announcement']);
@@ -24,13 +25,19 @@ $routes->post('/announcement/update(:num)','AnnouncementController::update/$1', 
 
 $routes->match(["get","delete"],'/announcement/delete(:num)', 'AnnouncementController::delete/$1', ['as'=> 'delete_announcement']);
 
+
+$routes->group('', ['filter' => 'login'], static function ($routes){//possiamo aggiungere il filtro a un gruppo di rotte
+    
+    $routes->get('set-password','PasswordController::set', ['as'=> 'set_password']);
+    $routes->post('set-password','PasswordController::update', ['as'=> 'update_password']);
+});
+
 service('auth')->routes($routes);
 
 // possiamo creare delle rotte crud in automatico utilizzando resources e passando come placeholder (:num)
 // $routes->resource("articles", ["placeholder" => "(:num"]);
 
-$routes->get('set-password','PasswordController::set', ['as'=> 'set_password']);
-$routes->post('set-password','PasswordController::update', ['as'=> 'update_password']);
+
 
 
 $routes->get('counter', 'CountController::counter',['as'=> 'counter']);

@@ -31,7 +31,7 @@
                             <td><?= esc($announcement->title) ?></td>
                             <td><?= esc($announcement->description) ?></td>
                             <td><?= esc($announcement->price) ?></td>
-                            <td><a class="btn btn-primary" href="<?= url_to("show_announcement", $announcement->id) ?>" role="button">Apri annuncio</a></td>
+                            <td><a class="btn btn-primary" href="<?= url_to("show_announcement", $announcement->id) ?>" role="button">Dettaglio Annuncio</a></td>
                             <td><a class="btn btn-secondary" href="<?= url_to("edit_announcement", $announcement->id) ?>" role="button">Modifica annuncio</a></td>
                             <td><a class="btn btn-danger" href="<?= url_to("delete_announcement", $announcement->id) ?>" role="button">Elimina annuncio</a></td>
                         </tr>

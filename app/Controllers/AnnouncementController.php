@@ -43,6 +43,7 @@ class AnnouncementController extends BaseController
 
     public function new()
     {
+        
         $announcement = NEW AnnouncementEntity;
 
         return view("announcements/new", compact('announcement'));
