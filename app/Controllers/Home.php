@@ -18,10 +18,10 @@ class Home extends BaseController
         $email->setSubject('Email Test');
         $email->setMessage('Testing the email class.');
 
-        if ($email->send()) {
-            echo 'Email successfully sent';
-        } else {
-            echo 'Failed to send email: ' . $email->printDebugger(['headers']);
-        }
+        // if ($email->send()) {
+        //     echo 'Email successfully sent';
+        // } else {
+        //     echo 'Failed to send email: ' . $email->printDebugger(['headers']);
+        // }
     }
 }
