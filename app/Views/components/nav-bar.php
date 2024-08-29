@@ -12,6 +12,9 @@
             <li class="nav-item">
               <a class="nav-link" href="<?= url_to('new_announcement') ?>">Crea Annunci</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= url_to('set_password') ?>">modifica password</a>
+            </li>
             
           </ul>
           

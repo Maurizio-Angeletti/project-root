@@ -1,5 +1,6 @@
 <?php
 
+use CodeIgniter\Commands\Utilities\Routes;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -25,3 +26,6 @@ service('auth')->routes($routes);
 
 // possiamo creare delle rotte crud in automatico utilizzando resources e passando come placeholder (:num)
 // $routes->resource("articles", ["placeholder" => "(:num"]);
+
+$routes->get("set-password","Password::set", ['as'=>'set_password']);
+$routes->post("set-password", "Password::update");

@@ -4,9 +4,13 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function home(): string
+    public function home()
     {
         $this->sendEmail();
+        if (session("magicLogin")) {
+            return redirect()->to("set-password")
+                            ->with("message", "Modifica la password");
+        }
         return view('home');
     }
 

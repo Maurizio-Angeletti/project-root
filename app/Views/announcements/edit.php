@@ -9,9 +9,14 @@
         <div class="container">
 
             <?php if (session()->has("errors")): ?>
-                <ul>
+                <ul class="mt-5 p-0">
                     <?php foreach(session("errors") as $error): ?>
-                        <li><?= $error ?></li>
+                        <li class="alert alert-danger d-flex align-items-center" role="alert"> 
+                            <div>
+                                <?= $error ?>
+                            </div>
+                        </li>
+                        
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
