@@ -13,9 +13,8 @@
               <a class="nav-link" href="<?= url_to('new_announcement') ?>">Crea Annunci</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= url_to('set_password') ?>">modifica password</a>
+              <a class="nav-link" href="<?= url_to('users_index') ?>">Indice Users</a>
             </li>
-            
           </ul>
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0"">
